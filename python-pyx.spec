@@ -1,6 +1,6 @@
 %define 	module	pyx
 Summary:	Python package for the creation of PostScript and PDF files
-Summary(pl):	TODO
+Summary(pl):	Pakiet dla pythona do tworzenia plików postscriptowych i plików PDF 
 Name:		python-%{module}
 Version:	0.8.1
 Release:	0.1
