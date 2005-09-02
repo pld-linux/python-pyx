@@ -7,8 +7,11 @@ Release:	0.1
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pyx/PyX-%{version}.tar.gz
+# Source0-md5:	5e751cef8d62774a6fc659cc9a03c231
 URL:		http://pyx.sourceforge.net/
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,15 +42,11 @@ find $RPM_BUILD_ROOT%{py_scriptdir} -type f -name "*.py" | xargs rm
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README
-# %dir %{py_sitedir}/%{module}
 %{py_sitescriptdir}/%{module}
 %dir %{_datadir}/%{module}
 %{_datadir}/%{module}/*.lfs
 %{_datadir}/%{module}/pyx.def
-#%attr(755,root,root) %{py_sitedir}/%{module}/*.so
-#%{py_sitedir}/%{module}/*.py[co]
-%{_sysconfdir}/pyxrc
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/pyxrc
