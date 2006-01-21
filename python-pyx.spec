@@ -3,7 +3,7 @@ Summary:	Python package for the creation of PostScript and PDF files
 Summary(pl):	Pakiet dla Pythona do tworzenia plików PostScript i PDF
 Name:		python-%{module}
 Version:	0.8.1
-Release:	0.1
+Release:	1
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pyx/PyX-%{version}.tar.gz
@@ -30,14 +30,22 @@ nadaj±cej siê do publikacji s± tworzone z takich prymitywów.
 %setup -q -n PyX-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-python setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
+%{__python} setup.py install --optimize=2 --root=$RPM_BUILD_ROOT
 
-find $RPM_BUILD_ROOT%{py_scriptdir} -type f -name "*.py" | xargs rm
+#Fixing paths
+sed -e "s@$RPM_BUILD_ROOT@@g" -i $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py
+
+#Removing *.py files
+mv $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py.bak
+rm -r $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py[o,c]
+find $RPM_BUILD_ROOT%{py_scriptdir} -type f -name "*.py"
+mv $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py.bak $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py
+
 
 %clean
 rm -rf $RPM_BUILD_ROOT
