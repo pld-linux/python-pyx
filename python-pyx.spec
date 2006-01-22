@@ -43,7 +43,7 @@ sed -e "s@$RPM_BUILD_ROOT@@g" -i $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/si
 #Removing *.py files
 mv $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py.bak
 rm -r $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py[o,c]
-find $RPM_BUILD_ROOT%{py_scriptdir} -type f -name "*.py"
+find $RPM_BUILD_ROOT%{py_scriptdir} -type f -name "*.py"|xargs rm
 mv $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py.bak $RPM_BUILD_ROOT%{py_sitescriptdir}/%{module}/siteconfig.py
 
 
