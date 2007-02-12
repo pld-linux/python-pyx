@@ -1,6 +1,6 @@
 %define 	module	pyx
 Summary:	Python package for the creation of PostScript and PDF files
-Summary(pl):	Pakiet dla Pythona do tworzenia plików PostScript i PDF
+Summary(pl.UTF-8):   Pakiet dla Pythona do tworzenia plikÃ³w PostScript i PDF
 Name:		python-%{module}
 Version:	0.9
 Release:	1
@@ -20,11 +20,11 @@ It combines an abstraction of the PostScript drawing model with a
 TeX/LaTeX interface. Complex tasks like 2D and 3D plots in
 publication-ready quality are built out of these primitives.
 
-%description -l pl
-PyX to pakiet Pythona do tworzenia plików PostScript i PDF. £±czy
-abstrakcjê modelu rysowania PostScriptu z interfejsem
-TeXowym/LaTeXowym. Z³o¿one zadania takie jak wykresy 2D i 3D o jako¶ci
-nadaj±cej siê do publikacji s± tworzone z takich prymitywów.
+%description -l pl.UTF-8
+PyX to pakiet Pythona do tworzenia plikÃ³w PostScript i PDF. ÅÄ…czy
+abstrakcjÄ™ modelu rysowania PostScriptu z interfejsem
+TeXowym/LaTeXowym. ZÅ‚oÅ¼one zadania takie jak wykresy 2D i 3D o jakoÅ›ci
+nadajÄ…cej siÄ™ do publikacji sÄ… tworzone z takich prymitywÃ³w.
 
 %prep
 %setup -q -n PyX-%{version}
