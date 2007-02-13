@@ -1,6 +1,6 @@
 %define 	module	pyx
 Summary:	Python package for the creation of PostScript and PDF files
-Summary(pl.UTF-8):   Pakiet dla Pythona do tworzenia plików PostScript i PDF
+Summary(pl.UTF-8):	Pakiet dla Pythona do tworzenia plików PostScript i PDF
 Name:		python-%{module}
 Version:	0.9
 Release:	1
