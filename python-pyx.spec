@@ -3,7 +3,7 @@ Summary:	Python package for the creation of PostScript and PDF files
 Summary(pl.UTF-8):	Pakiet dla Pythona do tworzenia plików PostScript i PDF
 Name:		python-%{module}
 Version:	0.10
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pyx/PyX-%{version}.tar.gz
