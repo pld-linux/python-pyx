@@ -9,6 +9,7 @@ Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/pyx/PyX-%{version}.tar.gz
 # Source0-md5:	20a8697a4b37c3ead10348ad5a49ba1a
 URL:		http://pyx.sourceforge.net/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
